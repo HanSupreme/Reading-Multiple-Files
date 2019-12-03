@@ -1,0 +1,47 @@
+public class assignments {
+	
+	static String line;
+
+	public static void main(String[] args) {
+		
+    test();
+    
+	}
+	
+	public static void test() {
+		
+	try {
+		
+		String location = ("C:\\Users\\perscholas_student\\Desktop\\courseCode.txt");
+		String locatin2 = ("C:\\Users\\perscholas_student\\Desktop\\courseName.txt");
+		
+		File file = new File(location);
+		File file2 = new File(locatin2);
+		
+		Scanner input = new Scanner(file);
+		Scanner input2 = new Scanner(file2);
+		
+		ArrayList<String> fileInfo = new ArrayList<String>();
+		
+		while (input.hasNextLine()) {
+			String line = input.nextLine();
+			String line2= input2.nextLine();
+			
+			fileInfo.add(line);
+			fileInfo.add(line2);
+		}
+		
+		for (String i : fileInfo) {
+			System.out.println(i);
+	
+		}
+		
+		input.close();
+		input2.close();
+
+	} catch (IOException e) {
+		System.out.println("Error");
+	}
+}
+
+}
